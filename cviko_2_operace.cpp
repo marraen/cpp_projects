@@ -40,6 +40,30 @@ return 0;
 
 int cramerovo()
 {
+	int A[3][3], B[1][3], i;
+
+	printf("Zadejte 1.  sloupec matice A\n");
+	for (i = 1; i < 4; i++){
+		scanf_s("%d", &A[1][i]);
+	}
+	printf("Zadejte 2. sloupec matice A\n");
+	for (i = 1; i < 4; i++){
+		scanf_s("%d", &A[2][i]);
+	}
+	printf("Zadejte 3. sloupec matice A\n");
+	for (i = 1; i < 4; i++){
+		scanf_s("%d", &A[3][i]);
+	}
+	printf("Zadejte jeden sloupec matice B\n");
+	for (i = 1; i < 4; i++){
+		scanf_s("%d", &B[1][i]);
+	}
+
+	double detA, detA1, detA2;
+
+	detA = (A[1][1] * A[2][2] * A[3][3] + A[2][1] * A[3][2] * A[1][3] + A[3][1] * A[1][2] * A[2][3]) - (A[1][3] * A[2][2] * A[3][1] + A[2][3] * A[3][2] * A[1][1] + A[3][3] * A[1][2] * A[2][1]);
+	printf("detA=%lf", detA);
+
 	int rows=3, cols=3;
 	int **A;
 	A = new int*[rows];
