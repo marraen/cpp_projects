@@ -9,6 +9,14 @@ class Complex
 	double real, imag;
 
 public:
+
+	//konstruktor
+	Complex(double n, double p)
+	{
+		real = n;
+		imag = p;
+	}
+
 	void set_real(double r);
 	void set_imag(double i);
 	
