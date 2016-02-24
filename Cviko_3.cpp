@@ -14,8 +14,11 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	C->set_real(5);
 	C->set_imag(5);
-	C->modul();
-	cout << "faze je" << C->faze() << endl;
+	C->get_real();
+	C->get_imag();
+	cout << "modul komplexniho cisla je"<< C->modul() << endl;
+	cout << "faze komplexniho cisla je" << C->faze() << endl;
+	C->tisk();
 	delete C;
 	
 	system("pause");
