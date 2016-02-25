@@ -1,43 +1,42 @@
 #include "stdafx.h"
 #include <iostream>
 #include <stdio.h>
+#include <vector>
 #include "operace.h"
 
 using namespace std;
 
 
-int bublinkove()
+int bublinkove(std::vector<int> &values)
 {
-int array[100], n, c, d, swap;
+	int c, d;
+	_TCHAR swap;
 
-printf("zadejte pocet prvku trideneho retezce:\n");
-scanf_s("%d", &n);
+	printf("zadavam %d prvku\n", values.size());
 
-printf("zadej %d prvku\n", n);
-
-for (c = 0; c < n; c++)
-	scanf_s("%d", &array[c]);
-
-for (c = 0; c < (n - 1); c++)
-{
-	for (d = 0; d < n - c - 1; d++)
+	for (c = 0; c < values.size(); c++)
 	{
-		if (array[d] > array[d + 1])
+		for (d = 0; d < values.size() - c - 1; d++)
 		{
-			swap = array[d];
-			array[d] = array[d + 1];
-			array[d + 1] = swap;
+			if (values[d] > values[d + 1])
+			{
+				swap = values[d];
+				values[d] = values[d + 1];
+				values[d + 1] = swap;
+			}
 		}
 	}
+
+	printf("setrizene prvky jsou:\n");
+
+	for (c = 0; c < values.size(); c++)
+		printf("%d\n", values[c]);
+
+	return 0;
 }
 
-printf("setrizene prvky jsou:\n");
 
-for (c = 0; c < n; c++)
-	printf("%d\n", array[c]);
-return 0;
-}
-
+/*
 int cramerovo()
 {
 	int A[3][3], B[1][3], i;
@@ -82,3 +81,4 @@ int cramerovo()
 
 
 }
+*/
