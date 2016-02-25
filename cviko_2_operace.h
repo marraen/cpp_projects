@@ -1,3 +1,6 @@
 #pragma once
-int bublinkove();
-int cramerovo();
+
+#include <vector>
+
+int bublinkove(std::vector<int> &argv);
+// int cramerovo();
